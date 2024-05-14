@@ -14,8 +14,7 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^ index.html [L]
 
-    # Rewrite requests to /webhook to http://91.107.215.29:6001/webhook/server.js
-    RewriteRule ^webhook$ http://91.107.215.29:6001/webhook/server.js [P,L]
+
 </IfModule>
 
 
