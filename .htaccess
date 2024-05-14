@@ -1,0 +1,21 @@
+# Deny access to .env and .htaccess files
+<FilesMatch "^(\.env|\.htaccess)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Rewrite rules for Angular app
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Serve index.html for requests to non-existent files or directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.html [L]
+
+    # Rewrite requests to /webhook to http://91.107.215.29:6001/webhook/server.js
+    RewriteRule ^webhook$ http://91.107.215.29:6001/webhook/server.js [P,L]
+</IfModule>
+
+
