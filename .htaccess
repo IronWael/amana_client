@@ -9,7 +9,7 @@
     RewriteEngine On
     RewriteBase /
 
-    # Serve index.html for requests to non-existent files or directories test3
+    # Serve index.html for requests to non-existent files or directories test4
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^ index.html [L]
